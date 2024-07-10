@@ -1,0 +1,5 @@
+CREATE OR REPLACE FUNCTION `udfs.md5`(s STRING) RETURNS STRING AS (
+IF
+    (s IS NULL
+      OR TRIM(s)='', NULL, TO_HEX(MD5(TRIM(s) )))
+);
